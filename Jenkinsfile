@@ -53,7 +53,7 @@ pipeline {
             post {
                 always {
                     // Publication des résultats de test
-                    junit testResultsPattern: 'test-results/results.xml'
+                    junit testResults: 'test-results/results.xml'
                     
                     // Publication du rapport de couverture
                     publishHTML([
