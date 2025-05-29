@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'master' }
     
     environment {
         // Variables d'environnement - À MODIFIER SELON VOS BESOINS
@@ -236,4 +236,4 @@ pipeline {
             }
         }
     }
-}ls
+}
