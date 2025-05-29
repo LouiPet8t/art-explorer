@@ -127,14 +127,6 @@ pipeline {
         }
         
         stage('🚀 Déploiement Production') {
-        when {
-            anyOf {
-                branch 'origin/main'
-                branch 'main'
-                branch 'master'
-                branch 'origin/master'
-            }
-        }
             steps {
                 echo '🚀 Déploiement en production...'
                 
