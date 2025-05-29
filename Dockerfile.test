@@ -1,0 +1,18 @@
+# Dockerfile.test pour exécuter les tests
+FROM python:3.9-slim
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier les fichiers de requirements
+COPY requirements.txt .
+
+# Installer les dépendances de test
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir pytest coverage
+
+# Copier le code source
+COPY . .
+
+# Commande pour exécuter les tests avec couverture
+CMD ["bash", "-c", "coverage run -m pytest && coverage report"]
