@@ -1,13 +1,14 @@
 pipeline {
     agent any
     
+    agent { label 'built-in' }
+    
     environment {
-        // Variables d'environnement - À MODIFIER SELON VOS BESOINS
         DOCKER_IMAGE = 'chicago-art-explorer'
         DOCKER_TAG = "${BUILD_NUMBER}"
         PROD_SERVER = '192.168.56.20'
         DEPLOY_USER = 'deploy'
-        NOTIFICATION_EMAIL = 'votre-email@example.com'  // CHANGER ICI
+        NOTIFICATION_EMAIL = 'votre-email@example.com'
     }
     
     stages {
